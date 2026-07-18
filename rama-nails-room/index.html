@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rama Nails Room — Boutique Nail Studio in Amman</title>
+  <meta name="description" content="Rama Nails Room — an elegant boutique nail studio in Amman, Jordan. Manicures, pedicures, gel & acrylic extensions, and bespoke nail art. Book now on WhatsApp." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --blush: #f7e6e6;
+      --blush-deep: #f0d3d3;
+      --cream: #fdf8f4;
+      --cream-soft: #fbf1ea;
+      --rose-gold: #b76e79;
+      --rose-gold-light: #c98a94;
+      --rose-gold-dark: #9a5560;
+      --gold: #c9a36a;
+      --ink: #4a3b3d;
+      --ink-soft: #6f5f61;
+      --white: #ffffff;
+      --whatsapp: #25d366;
+      --shadow-soft: 0 10px 30px rgba(154, 85, 96, 0.12);
+      --shadow-hover: 0 18px 45px rgba(154, 85, 96, 0.22);
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.7;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .serif {
+      font-family: var(--serif);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: var(--ink);
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(1150px, 90%);
+      margin: 0 auto;
+    }
+
+    section { padding: 100px 0; }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--rose-gold);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin-bottom: 18px;
+      line-height: 1.15;
+    }
+
+    .section-intro {
+      max-width: 620px;
+      margin: 0 auto 55px;
+      text-align: center;
+      color: var(--ink-soft);
+    }
+
+    .text-center { text-align: center; }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.4s var(--ease);
+    }
+
+    .btn-whatsapp {
+      background: linear-gradient(135deg, var(--rose-gold), var(--rose-gold-dark));
+      color: var(--white);
+      box-shadow: var(--shadow-soft);
+    }
+    .btn-whatsapp:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: var(--shadow-hover);
+      background: linear-gradient(135deg, var(--rose-gold-light), var(--rose-gold));
+    }
+    .btn-whatsapp svg { width: 20px; height: 20px; fill: currentColor; }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--rose-gold-dark);
+      border: 1.5px solid var(--rose-gold);
+    }
+    .btn-outline:hover {
+      transform: translateY(-4px);
+      background: var(--rose-gold);
+      color: var(--white);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* ---------- Nav ---------- */
+    header.nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(253, 248, 244, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(183, 110, 121, 0.12);
+      transition: box-shadow 0.4s var(--ease);
+    }
+    header.nav.scrolled { box-shadow: 0 6px 20px rgba(154, 85, 96, 0.08); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--rose-gold-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand .dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--rose-gold));
+      box-shadow: 0 0 0 4px rgba(201, 163, 106, 0.18);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+    .nav-links a.link {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      position: relative;
+      transition: color 0.3s var(--ease);
+    }
+    .nav-links a.link::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -6px;
+      width: 0; height: 2px;
+      background: var(--rose-gold);
+      transition: width 0.35s var(--ease);
+    }
+    .nav-links a.link:hover { color: var(--rose-gold-dark); }
+    .nav-links a.link:hover::after { width: 100%; }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .nav-toggle span {
+      width: 26px; height: 2px; background: var(--rose-gold-dark);
+      border-radius: 2px; transition: 0.3s var(--ease);
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      padding: 130px 0 120px;
+      text-align: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 20%, var(--blush) 0%, transparent 45%),
+        radial-gradient(circle at 85% 15%, var(--cream-soft) 0%, transparent 40%),
+        radial-gradient(circle at 50% 90%, var(--blush-deep) 0%, transparent 55%),
+        var(--cream);
+    }
+    .hero .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.55;
+      z-index: 0;
+    }
+    .blob-1 { width: 380px; height: 380px; background: var(--blush-deep); top: -80px; left: -60px; }
+    .blob-2 { width: 320px; height: 320px; background: #f5e2d0; bottom: -100px; right: -40px; }
+
+    .hero-content { position: relative; z-index: 2; }
+    .hero .eyebrow {
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      color: var(--rose-gold);
+      margin-bottom: 22px;
+      font-weight: 500;
+    }
+    .hero h1 {
+      font-size: clamp(2.8rem, 8vw, 5.2rem);
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+    .hero h1 .accent {
+      font-style: italic;
+      color: var(--rose-gold);
+    }
+    .hero .tagline {
+      max-width: 560px;
+      margin: 0 auto 38px;
+      font-size: 1.12rem;
+      color: var(--ink-soft);
+    }
+    .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ---------- About ---------- */
+    .about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-visual {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      border-radius: 24px;
+      background: linear-gradient(150deg, var(--blush) 0%, var(--blush-deep) 60%, #ecc9c0 100%);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-visual .mono {
+      font-family: var(--serif);
+      font-size: 6rem;
+      color: rgba(255,255,255,0.7);
+      font-weight: 600;
+    }
+    .about-visual::after {
+      content: '';
+      position: absolute; inset: 14px;
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: 16px;
+    }
+    .about-text h2 { margin-bottom: 22px; }
+    .about-text p { color: var(--ink-soft); margin-bottom: 18px; }
+    .about-signature {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.5rem;
+      color: var(--rose-gold);
+      margin-top: 8px;
+    }
+
+    /* ---------- Services ---------- */
+    .services { background: var(--cream); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 26px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 38px 30px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+      border: 1px solid rgba(183, 110, 121, 0.06);
+    }
+    .service-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); }
+    .service-icon {
+      width: 58px; height: 58px; border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--blush), var(--blush-deep));
+      margin-bottom: 22px;
+      font-size: 1.6rem;
+    }
+    .service-card h3 { font-size: 1.5rem; margin-bottom: 12px; }
+    .service-card p { color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 18px; }
+    .price-note {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--rose-gold);
+      font-weight: 500;
+      padding-top: 14px;
+      border-top: 1px solid rgba(183, 110, 121, 0.15);
+    }
+
+    /* ---------- Gallery ---------- */
+    .gallery { background: var(--white); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .gallery-item {
+      aspect-ratio: 1;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+    .gallery-item .fill {
+      position: absolute; inset: 0;
+      transition: transform 0.6s var(--ease);
+    }
+    .gallery-item:hover .fill { transform: scale(1.12); }
+    .gallery-item::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(154, 85, 96, 0.35), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.5s var(--ease);
+    }
+    .gallery-item:hover::after { opacity: 1; }
+    .g1 { background: linear-gradient(135deg, #f7e6e6, #e9c3c9); }
+    .g2 { background: linear-gradient(135deg, #fbf1ea, #f0d3d3); }
+    .g3 { background: linear-gradient(135deg, #f5e2d0, #dcae9c); }
+    .g4 { background: linear-gradient(135deg, #efd8dd, #c98a94); }
+    .g5 { background: linear-gradient(135deg, #f8ede4, #e7c4b4); }
+    .g6 { background: linear-gradient(135deg, #f3dfe2, #d9a3ac); }
+    .g7 { background: linear-gradient(135deg, #fceee6, #f2d8c8); }
+    .g8 { background: linear-gradient(135deg, #f0d3d3, #b76e79); }
+
+    /* ---------- Testimonials ---------- */
+    .testimonials { background: var(--cream-soft); }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 26px;
+    }
+    .testi-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 36px 32px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+      position: relative;
+    }
+    .testi-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+    .testi-card .quote {
+      font-family: var(--serif);
+      font-size: 3.5rem;
+      line-height: 1;
+      color: var(--blush-deep);
+      position: absolute;
+      top: 18px; right: 26px;
+    }
+    .stars { color: var(--gold); margin-bottom: 16px; letter-spacing: 2px; }
+    .testi-card p { color: var(--ink-soft); font-style: italic; margin-bottom: 22px; }
+    .testi-author { display: flex; align-items: center; gap: 14px; }
+    .testi-avatar {
+      width: 46px; height: 46px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--rose-gold-light), var(--rose-gold));
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white); font-weight: 500; font-family: var(--serif); font-size: 1.2rem;
+    }
+    .testi-author .name { font-weight: 500; color: var(--ink); font-family: var(--sans); font-size: 0.95rem; }
+    .testi-author .role { font-size: 0.8rem; color: var(--rose-gold); }
+
+    /* ---------- Contact ---------- */
+    .contact { background: var(--white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+    .contact-info h2 { margin-bottom: 22px; }
+    .contact-info > p { color: var(--ink-soft); margin-bottom: 30px; max-width: 440px; }
+    .contact-list { list-style: none; display: flex; flex-direction: column; gap: 22px; }
+    .contact-item { display: flex; align-items: center; gap: 18px; }
+    .contact-item .ci-icon {
+      width: 50px; height: 50px; border-radius: 14px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--blush), var(--blush-deep));
+      color: var(--rose-gold-dark);
+    }
+    .contact-item .ci-icon svg { width: 22px; height: 22px; fill: currentColor; }
+    .contact-item .ci-label { font-size: 0.78rem; letter-spacing: 1px; text-transform: uppercase; color: var(--rose-gold); }
+    .contact-item .ci-value { color: var(--ink); font-size: 1.02rem; }
+    .contact-item a.ci-value:hover { color: var(--rose-gold-dark); }
+
+    .contact-card {
+      background: linear-gradient(160deg, var(--blush) 0%, var(--cream-soft) 100%);
+      border-radius: 24px;
+      padding: 46px 40px;
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+    .contact-card h3 { font-size: 1.9rem; margin-bottom: 12px; }
+    .contact-card p { color: var(--ink-soft); margin-bottom: 28px; }
+    .contact-card .btn { width: 100%; justify-content: center; margin-bottom: 14px; }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--ink);
+      color: #e9dcdd;
+      padding: 60px 0 30px;
+      text-align: center;
+    }
+    footer .f-brand {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    footer .f-tag { color: #c3aeb0; margin-bottom: 28px; font-size: 0.95rem; }
+    .f-socials { display: flex; gap: 16px; justify-content: center; margin-bottom: 34px; }
+    .f-socials a {
+      width: 46px; height: 46px; border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.4s var(--ease), background 0.4s var(--ease);
+    }
+    .f-socials a:hover { transform: translateY(-4px); background: var(--rose-gold); }
+    .f-socials a svg { width: 20px; height: 20px; fill: #e9dcdd; transition: fill 0.4s var(--ease); }
+    .f-socials a:hover svg { fill: var(--white); }
+    .f-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; font-size: 0.85rem; color: #a89294; }
+
+    /* ---------- Floating WhatsApp ---------- */
+    .float-whatsapp {
+      position: fixed;
+      bottom: 26px; right: 26px;
+      width: 62px; height: 62px;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+      z-index: 200;
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+      animation: pulse 2.6s infinite;
+    }
+    .float-whatsapp:hover { transform: scale(1.1) translateY(-2px); box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6); }
+    .float-whatsapp svg { width: 34px; height: 34px; fill: var(--white); }
+    @keyframes pulse {
+      0% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45), 0 0 0 0 rgba(37, 211, 102, 0.4); }
+      70% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45), 0 0 0 16px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45), 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* ---------- Scroll reveal ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal.d1 { transition-delay: 0.1s; }
+    .reveal.d2 { transition-delay: 0.2s; }
+    .reveal.d3 { transition-delay: 0.3s; }
+    .reveal.d4 { transition-delay: 0.4s; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-visual { max-width: 380px; margin: 0 auto; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 700px) {
+      section { padding: 70px 0; }
+      .nav-links {
+        position: fixed;
+        top: 74px; right: 0;
+        width: 74%; max-width: 300px;
+        height: calc(100vh - 74px);
+        background: var(--cream);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 34px;
+        gap: 26px;
+        transform: translateX(110%);
+        transition: transform 0.45s var(--ease);
+        box-shadow: -10px 0 40px rgba(154, 85, 96, 0.12);
+      }
+      .nav-links.open { transform: translateX(0); }
+      .nav-toggle { display: flex; }
+      .nav-links .btn { width: 100%; justify-content: center; }
+    }
+
+    @media (max-width: 460px) {
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .float-whatsapp { width: 56px; height: 56px; }
+      .float-whatsapp svg { width: 30px; height: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="brand"><span class="dot"></span>Rama Nails Room</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about" class="link">About</a>
+        <a href="#services" class="link">Services</a>
+        <a href="#gallery" class="link">Gallery</a>
+        <a href="#testimonials" class="link">Reviews</a>
+        <a href="#contact" class="link">Contact</a>
+        <a href="https://wa.me/962779788012" target="_blank" rel="noopener" class="btn btn-whatsapp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Book Now
+        </a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="container hero-content">
+      <p class="eyebrow reveal">Boutique Nail Studio · Amman</p>
+      <h1 class="reveal d1">Beautiful nails,<br /><span class="accent">a moment of you.</span></h1>
+      <p class="tagline reveal d2">Where flawless nail artistry meets pure self-care. Step into Rama Nails Room and leave feeling polished, pampered, and effortlessly you.</p>
+      <div class="hero-actions reveal d3">
+        <a href="https://wa.me/962779788012" target="_blank" rel="noopener" class="btn btn-whatsapp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Book Now on WhatsApp
+        </a>
+        <a href="#services" class="btn btn-outline">View Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-visual reveal">
+        <span class="mono">R</span>
+      </div>
+      <div class="about-text reveal d1">
+        <span class="section-label">Our Story</span>
+        <h2>A little corner of calm &amp; beauty in Amman</h2>
+        <p>Rama Nails Room was born from a simple belief — that every woman deserves a moment that is entirely her own. Tucked away on Najiah An Nabulsi Street, our studio is a warm, welcoming space where you can slow down, breathe, and be beautifully cared for.</p>
+        <p>We treat every set of nails like a piece of art. With premium products, meticulous hygiene, and a truly personal touch, your hands and feet are always in the gentlest, most skilled care. Whether it's a quick refresh or a full pampering session, you'll leave glowing.</p>
+        <p class="about-signature">— with love, Rama</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">What We Offer</span>
+        <h2 class="section-title">Services made just for you</h2>
+      </div>
+      <p class="section-intro reveal d1">From everyday elegance to statement nail art, each service is tailored to you and finished to perfection.</p>
+      <div class="services-grid">
+        <div class="service-card reveal d1">
+          <div class="service-icon">💅</div>
+          <h3>Manicure</h3>
+          <p>Classic and spa manicures that leave your hands soft, tidy, and beautifully polished with a flawless finish.</p>
+          <span class="price-note">Pricing on request</span>
+        </div>
+        <div class="service-card reveal d2">
+          <div class="service-icon">🦶</div>
+          <h3>Pedicure</h3>
+          <p>Relaxing, restorative pedicures to soothe tired feet — complete with gentle care, exfoliation, and a glossy finish.</p>
+          <span class="price-note">Pricing on request</span>
+        </div>
+        <div class="service-card reveal d3">
+          <div class="service-icon">✨</div>
+          <h3>Gel &amp; Acrylic Extensions</h3>
+          <p>Strong, natural-looking extensions in your perfect length and shape — long-lasting, lightweight, and stunning.</p>
+          <span class="price-note">Pricing on request</span>
+        </div>
+        <div class="service-card reveal d4">
+          <div class="service-icon">🎨</div>
+          <h3>Nail Art</h3>
+          <p>Bespoke designs, from delicate minimal detail to bold, eye-catching art — created just for your style and mood.</p>
+          <span class="price-note">Pricing on request</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Our Work</span>
+        <h2 class="section-title">A gallery of pretty things</h2>
+      </div>
+      <p class="section-intro reveal d1">A little glimpse of the nail designs our clients adore. Your next favourite look might be right here.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item reveal"><div class="fill g1"></div></div>
+        <div class="gallery-item reveal d1"><div class="fill g2"></div></div>
+        <div class="gallery-item reveal d2"><div class="fill g3"></div></div>
+        <div class="gallery-item reveal d3"><div class="fill g4"></div></div>
+        <div class="gallery-item reveal"><div class="fill g5"></div></div>
+        <div class="gallery-item reveal d1"><div class="fill g6"></div></div>
+        <div class="gallery-item reveal d2"><div class="fill g7"></div></div>
+        <div class="gallery-item reveal d3"><div class="fill g8"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Kind Words</span>
+        <h2 class="section-title">Loved by our clients</h2>
+      </div>
+      <p class="section-intro reveal d1">Nothing makes us happier than a room full of smiling, confident clients. Here's what they say.</p>
+      <div class="testi-grid">
+        <div class="testi-card reveal d1">
+          <span class="quote">“</span>
+          <div class="stars">★★★★★</div>
+          <p>Honestly the best nail experience I've had in Amman. The attention to detail is unreal and the space feels so calm and clean. I never go anywhere else now!</p>
+          <div class="testi-author">
+            <div class="testi-avatar">L</div>
+            <div>
+              <div class="name">Lana K.</div>
+              <div class="role">Regular Client</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal d2">
+          <span class="quote">“</span>
+          <div class="stars">★★★★★</div>
+          <p>Rama is so talented and so sweet. My gel extensions lasted for weeks and looked absolutely perfect. It truly feels like a little treat every single time.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">D</div>
+            <div>
+              <div class="name">Dina M.</div>
+              <div class="role">Bride-to-be</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal d3">
+          <span class="quote">“</span>
+          <div class="stars">★★★★★</div>
+          <p>Beautiful nail art, spotless hygiene, and the warmest welcome. I always leave feeling pampered and gorgeous. Highly, highly recommend Rama Nails Room.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">S</div>
+            <div>
+              <div class="name">Sara A.</div>
+              <div class="role">Happy Client</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info reveal">
+        <span class="section-label">Get In Touch</span>
+        <h2>Come say hello 🌸</h2>
+        <p>Ready to treat yourself? Book your appointment or reach out with any question — we'd love to pamper you.</p>
+        <ul class="contact-list">
+          <li class="contact-item">
+            <span class="ci-icon">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </span>
+            <div>
+              <div class="ci-label">Call Us</div>
+              <a href="tel:+962797888012" class="ci-value">+962 7 9788 8012</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <span class="ci-icon">
+              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </span>
+            <div>
+              <div class="ci-label">WhatsApp</div>
+              <a href="https://wa.me/962779788012" target="_blank" rel="noopener" class="ci-value">Message us to book</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <span class="ci-icon">
+              <svg viewBox="0 0 24 24"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3zm10.5 1a1 1 0 100 2 1 1 0 000-2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/></svg>
+            </span>
+            <div>
+              <div class="ci-label">Instagram</div>
+              <a href="https://instagram.com/nails_by_ramaaa" target="_blank" rel="noopener" class="ci-value">@nails_by_ramaaa</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <span class="ci-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+            </span>
+            <div>
+              <div class="ci-label">Find Us</div>
+              <div class="ci-value">Najiah An Nabulsi St, Amman, Jordan</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="contact-card reveal d2">
+        <h3>Book your moment</h3>
+        <p>Tap below and message us on WhatsApp — we'll find the perfect time for you.</p>
+        <a href="https://wa.me/962779788012" target="_blank" rel="noopener" class="btn btn-whatsapp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <a href="tel:+962797888012" class="btn btn-outline">Call +962 7 9788 8012</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="f-brand">Rama Nails Room</div>
+      <p class="f-tag">Boutique nail studio · Amman, Jordan</p>
+      <div class="f-socials">
+        <a href="https://wa.me/962779788012" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://instagram.com/nails_by_ramaaa" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3zm10.5 1a1 1 0 100 2 1 1 0 000-2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/></svg>
+        </a>
+        <a href="tel:+962797888012" aria-label="Phone">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </a>
+      </div>
+      <div class="f-bottom">© <span id="year"></span> Rama Nails Room. All rights reserved. · Made with care in Amman.</div>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING WHATSAPP ============ -->
+  <a href="https://wa.me/962779788012" target="_blank" rel="noopener" class="float-whatsapp" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Nav shadow on scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Mobile menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => navLinks.classList.remove('open'))
+    );
+
+    // Scroll-reveal with IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
